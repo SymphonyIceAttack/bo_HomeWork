@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  react-todo:
+    build:
+      context: todoList
+      dockerfile: dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - /usr/app/node_modules
+      - ./todoList:/usr/app
