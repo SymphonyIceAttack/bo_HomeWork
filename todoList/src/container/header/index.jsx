@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
 
-export const index = () => {
-  return (
-    <div>index</div>
-  )
-}
+import "./header.less";
+import Title from "./title";
+
+const index = () => {
+    return (
+        <header>
+            <Title />
+        </header>
+    );
+};
+
+export default index;

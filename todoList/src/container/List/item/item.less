@@ -1,0 +1,110 @@
+.Item {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    border-radius: 3%;
+    box-shadow: 0 0 5px 5px #CCC;
+    ;
+    position: relative;
+    transition: all 1s;
+    animation: bounce 2s linear infinite;
+
+    &:hover {
+        box-shadow: 0 0 10px 10px #CCC;
+    }
+
+    input[type='checkbox'] {
+        width: 2rem;
+        visibility: hidden;
+
+        &:checked+label {
+            background-color: rgb(43, 67, 226);
+        }
+
+        &:checked+span {
+            text-decoration: line-through;
+        }
+    }
+
+    label {
+        margin-left: 0.3rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 20px;
+        border-radius: 100%;
+        cursor: pointer;
+        position: absolute;
+        border: 1px solid #ccc;
+        transition: all 2s;
+    }
+
+    span {
+        flex-grow: 1;
+        line-height: 3rem;
+        font-size: 1.5rem;
+        color: transparent;
+        background: linear-gradient(90deg, rgba(243, 72, 104, 1) 20.232394366197184%, rgba(242, 71, 104, 1) 20.232394366197184%, rgba(158, 0, 236, 1) 80.23239436619718%);
+        backdrop-filter: opacity(20%);
+        -webkit-backdrop-filter: opacity(20%);
+        background-size: 200% 100%;
+        background-position: 0% 0%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: move 1.5s linear infinite;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    button {
+
+        margin-right: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        box-shadow: 0 0 3px 3px #aaa;
+        border-radius: 5%;
+        transition: all 1s;
+
+        &:hover {
+            background-color: deepskyblue;
+            box-shadow: 0 0 5px 5px rgb(24, 155, 195)
+        }
+
+        &:active {
+            background-color: green;
+        }
+    }
+
+}
+
+
+@keyframes move {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        box-shadow: 0 0 5px 5px #CCC;
+    }
+
+    50% {
+        box-shadow: 0 0 10px 10px #CCC;
+
+    }
+
+    100% {
+        box-shadow: 0 0 5px 5px #CCC;
+    }
+}

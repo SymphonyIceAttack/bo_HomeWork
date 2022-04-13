@@ -1,13 +1,11 @@
 import { useState } from "react";
 import Container from "./container";
-
+import store from "./store";
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
         <div className="App">
-            <Container />
+            <Container store={store} />
         </div>
     );
 }
