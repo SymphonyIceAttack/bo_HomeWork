@@ -1,6 +1,8 @@
 //该文件是用于创建一个为Count组件服务的reducer，reducer的本质就是一个函数
 //reducer函数 会接到两个参数，分别为:之前的状态(preState),动作对象(action)
 import { ADDITEM, CHANGESTATE, DELETEITEM } from "../constant";
+import { initData } from "../../service/initData";
+
 const initState = [
     {
         id: "1",
@@ -18,6 +20,7 @@ const initState = [
         completed: false,
     },
 ];
+
 function countReducer(preState = initState, action) {
     const { type, data } = action;
     switch (type) {
@@ -41,6 +44,7 @@ function countReducer(preState = initState, action) {
             });
             return [...newState];
         default:
+            // const requestData = await initData();
             return preState;
     }
 }

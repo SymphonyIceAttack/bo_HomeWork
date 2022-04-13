@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./addItem.less";
 
-const index = ({ addItem }) => {
+const index = ({ addItem, setIsShow }) => {
     const input1 = useRef(null);
     return (
         <div className="addItem">
@@ -11,6 +11,7 @@ const index = ({ addItem }) => {
                     onClick={() => {
                         addItem(input1.current.value);
                         input1.current.value = "";
+                        setIsShow(false);
                     }}
                 >
                     添加

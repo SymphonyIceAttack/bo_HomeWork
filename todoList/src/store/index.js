@@ -7,9 +7,10 @@ import thunk from "redux-thunk";
 
 //引入为count组件服务的reducer
 import listReducer from "./reducers/list.js";
-
+import LoadingReducer from "./reducers/Loading.js";
 const allReducer = combineReducers({
     List: listReducer,
+    Loading: LoadingReducer,
 });
 
 //暴露store

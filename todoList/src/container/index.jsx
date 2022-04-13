@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./container.less";
 import Header from "./header";
 import List from "./List";
 import AddItem from "./AddItem";
+import WellAddItem from "./WellAddItem";
 import {
     createChangeStateAction,
     deleteItemAction,
@@ -10,7 +11,9 @@ import {
 } from "../store/actions/list";
 
 import { connect } from "react-redux";
+
 const index = ({ TodoList, changeState, deleteItem, addItem }) => {
+    const [isShow, setIsShow] = useState(false);
     return (
         <div className="container">
             <Header />
@@ -19,7 +22,11 @@ const index = ({ TodoList, changeState, deleteItem, addItem }) => {
                 changeState={changeState}
                 deleteItem={deleteItem}
             />
-            <AddItem addItem={addItem} />
+            {isShow ? (
+                <AddItem addItem={addItem} setIsShow={setIsShow} />
+            ) : (
+                <WellAddItem setIsShow={setIsShow} />
+            )}
         </div>
     );
 };
