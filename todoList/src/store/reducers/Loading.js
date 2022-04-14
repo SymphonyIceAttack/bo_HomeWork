@@ -6,7 +6,7 @@ export default function LoadingReducer(preLoading = initLoading, action) {
     const { type, data } = action;
     switch (type) {
         case CHANGELOADING:
-            return !preLoading;
+            return data;
         default:
             return preLoading;
     }

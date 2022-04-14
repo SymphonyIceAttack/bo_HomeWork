@@ -18,6 +18,6 @@ export const initData = () => {
                     completed: false,
                 },
             ]);
-        }, 2000);
+        }, 3000);
     });
 };
