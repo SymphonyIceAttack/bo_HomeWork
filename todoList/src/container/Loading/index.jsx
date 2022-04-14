@@ -1,14 +1,7 @@
-import React, { useEffect } from "react";
-import { initData } from "../../service/initData";
+import React from "react";
+
 import "./Loading.less";
-const index = ({ changeLoading, initState }) => {
-    useEffect(() => {
-        initData().then((res) => {
-            initState(res);
-            changeLoading(false);
-        });
-        return () => {};
-    }, []);
+const index = () => {
     return <div className="Loading"></div>;
 };
 

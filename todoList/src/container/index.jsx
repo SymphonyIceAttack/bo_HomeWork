@@ -5,6 +5,7 @@ import List from "./List";
 import AddItem from "./AddItem";
 import WellAddItem from "./WellAddItem";
 import Loading from "./Loading";
+import { useInitState } from "./hooks";
 import {
     initStateAction,
     createChangeStateAction,
@@ -26,6 +27,7 @@ const index = ({
     addItem,
 }) => {
     const [isShow, setIsShow] = useState(false);
+    useInitState(isLoading, initState, changeLoading);
     return (
         <div
             className="container"
@@ -37,7 +39,7 @@ const index = ({
             }}
         >
             {isLoading ? (
-                <Loading changeLoading={changeLoading} initState={initState} />
+                <Loading />
             ) : (
                 <div className="containerInner">
                     <Header />
