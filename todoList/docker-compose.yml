@@ -3,7 +3,7 @@ version: '3'
 services:
   react-todo:
     build:
-      context: todoList
+      context: .
       dockerfile: dockerfile
     ports:
       - '80:80'
